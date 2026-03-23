@@ -34,8 +34,8 @@ const ClientsSection = () => {
             Quem confia na <span className="text-primary">Lobo Soluções</span>
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-stone-600 md:text-base">
-            Parcerias em que consultoria, engenharia, arquitetura e agentes de IA caminham juntos —
-            resultado e escala com responsabilidade.
+            Parcerias em que consultoria, engenharia, arquitetura e agentes de IA caminham juntos: resultado
+            e escala com responsabilidade.
           </p>
         </motion.div>
 

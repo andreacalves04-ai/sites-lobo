@@ -64,7 +64,7 @@ const CasesSection = () => {
             Cases de <span className="text-accent">sucesso</span>
           </h2>
           <p className="mx-auto max-w-2xl text-stone-600">
-            Engenharia e arquitetura da Lobo Soluções em produção — consultoria, software e operação com
+            Engenharia e arquitetura da Lobo Soluções em produção: consultoria, software e operação com
             impacto mensurável e escala.
           </p>
         </div>

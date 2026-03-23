@@ -33,7 +33,7 @@ const ContactSection = () => {
             Entre em <span className="text-primary">contato</span>
           </h2>
           <p className="mx-auto max-w-xl text-stone-600">
-            Quer combinar agentes de IA, consultoria e engenharia com arquitetura sólida? Conte o desafio —
+            Quer combinar agentes de IA, consultoria e engenharia com arquitetura sólida? Conte o desafio;
             respondemos com próximos passos claros.
           </p>
         </div>

@@ -57,7 +57,7 @@ const ServicesSection = () => {
           </h2>
           <p className="mx-auto max-w-2xl text-stone-600">
             Do diagnóstico à operação: consultoria, engenharia, arquitetura e agentes de IA no mesmo DNA
-            AI-first — para resultado e escala com governança.
+            AI-first, para resultado e escala com governança.
           </p>
         </div>
 

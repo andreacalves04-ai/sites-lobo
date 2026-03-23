@@ -76,7 +76,7 @@ const pipelineSteps = [
 ];
 
 /* ------------------------------------------------------------------ */
-/*  PAGE HERO — faixa escura (alinhada ao bloco AI‑DLC da home)         */
+/*  PAGE HERO: faixa escura (alinhada ao bloco AI‑DLC da home)         */
 /* ------------------------------------------------------------------ */
 const PageHero = () => (
   <section className="relative overflow-hidden border-b border-stone-800 bg-stone-950 pb-20 pt-10 text-stone-100 md:pt-14">
@@ -114,8 +114,8 @@ const PageHero = () => (
         transition={{ duration: 0.5 }}
         className="mx-auto mb-10 max-w-3xl text-base leading-relaxed text-stone-400 md:text-lg"
       >
-        O AI‑DLC da Lobo Soluções — DNA AI-first em cada etapa: da descoberta estratégica à governança
-        de qualidade, com agentes, consultoria, engenharia e arquitetura no mesmo fluxo — aqui, em
+        O AI‑DLC da Lobo Soluções, com DNA AI-first em cada etapa: da descoberta estratégica à governança
+        de qualidade, com agentes, consultoria, engenharia e arquitetura no mesmo fluxo. Aqui, em
         detalhe.
       </motion.p>
       <motion.div
@@ -142,7 +142,7 @@ const PageHero = () => (
 );
 
 /* ------------------------------------------------------------------ */
-/*  PIPELINE — canvas Aura                                             */
+/*  PIPELINE / canvas Aura                                             */
 /* ------------------------------------------------------------------ */
 const MaturityPipeline = () => (
   <section className="section-rhythm-canvas section-rhythm-canvas-from-dark border-y border-stone-300/60 py-16">
@@ -159,7 +159,7 @@ const MaturityPipeline = () => (
           Pipeline de maturidade
         </h2>
         <p className="mx-auto max-w-xl text-sm text-stone-600">
-          Da ideia ao valor validado — progressão estratégica onde consultoria, arquitetura, engenharia e
+          Da ideia ao valor validado: progressão estratégica onde consultoria, arquitetura, engenharia e
           agentes de IA avançam juntos, sem perder governança.
         </p>
       </motion.div>
@@ -524,7 +524,7 @@ const phases: PhaseCardProps[] = [
     step: "01",
     icon: Target,
     iconClass: "text-accent",
-    title: "Intent — Intenção Estratégica",
+    title: "Intent · Intenção Estratégica",
     subtitle: "Toda engenharia começa com uma métrica de negócio clara",
     description:
       "Aqui traduzimos a visão em engenharia orientada a resultado. Cada card carrega o outcome de negócio mensurável, constraints de compliance e guardrails arquiteturais.",
@@ -542,7 +542,7 @@ const phases: PhaseCardProps[] = [
     step: "02",
     icon: Puzzle,
     iconClass: "text-sky-400",
-    title: "Units — Design Lógico & Arquitetura",
+    title: "Units · Design Lógico & Arquitetura",
     subtitle: "Arquitetura antes da aceleração",
     description:
       "A IA propõe o Logical Blueprint: subdomínios DDD são definidos, Data Flow é mapeado e contratos de API são estabelecidos antes da implementação.",
@@ -559,24 +559,24 @@ const phases: PhaseCardProps[] = [
     step: "03",
     icon: Cog,
     iconClass: "text-emerald-400",
-    title: "Bolts — Microiterações Assistidas (MCP)",
+    title: "Bolts · Microiterações Assistidas (MCP)",
     subtitle: "Execução com Transparência Total",
     description:
       "IA lê contexto (código + design aprovado), executa alterações via MCP, dispara testes automatizados e ajusta automaticamente até passar.",
     fields: [{ label: "Execution Logs (MCP)" }, { label: "Test Status" }, { label: "Agent Status" }],
     badge: "MCP Agent executando micro-iteração",
     highlight:
-      "Cada micro-iteração é rastreável — com logs de execução, status de testes e feedback em tempo real.",
+      "Cada micro-iteração é rastreável, com logs de execução, status de testes e feedback em tempo real.",
     quote: "Não é geração de código. É engenharia assistida com feedback em tempo real.",
   },
   {
     step: "04",
     icon: ShieldCheck,
     iconClass: "text-violet-400",
-    title: "Quality Gate — Governança Real",
+    title: "Quality Gate · Governança Real",
     subtitle: "Nenhuma entrega passa sem qualidade mensurável",
     description:
-      "Integração com SonarQube para análise contínua. Radar visual de Bugs, Vulnerabilidades e Code Smells. Bloqueio automático caso falhe — Force Bypass apenas para senior.",
+      "Integração com SonarQube para análise contínua. Radar visual de Bugs, Vulnerabilidades e Code Smells. Bloqueio automático caso falhe; Force Bypass apenas para senior.",
     fields: [
       { label: "Sonar Radar" },
       { label: "Bugs" },
@@ -613,10 +613,10 @@ const DigitalTwinSection = () => (
           Rastreabilidade
         </span>
         <h2 className="font-sans text-xl font-semibold tracking-tight text-white md:text-2xl">
-          Anatomia do card — <span className="text-accent">gêmeo digital</span>
+          Anatomia do card: <span className="text-accent">gêmeo digital</span>
         </h2>
         <p className="mx-auto mt-2 max-w-xl text-sm text-stone-400">
-          Cada tarefa vira um Digital Twin na trilha do AI‑DLC: rastreável, auditável e governado — da
+          Cada tarefa vira um Digital Twin na trilha do AI‑DLC: rastreável, auditável e governado, da
           consultoria à engenharia e aos agentes.
         </p>
       </motion.div>
@@ -632,7 +632,7 @@ const DigitalTwinSection = () => (
         <div className="flex flex-wrap items-center gap-3 border-b border-white/10 bg-stone-900/60 px-6 py-4">
           <Fingerprint className="h-5 w-5 text-accent" aria-hidden />
           <span className="font-mono text-xs font-semibold text-white md:text-sm">
-            CARD‑2847 — Refatorar módulo de pagamentos
+            CARD‑2847: Refatorar módulo de pagamentos
           </span>
           <span className="ml-auto rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-1 text-xs font-bold text-emerald-400">
             Quality Gate: Pass
@@ -788,7 +788,7 @@ const GovernanceExperience = () => (
           className="relative z-[3] mt-8 text-center"
         >
           <p className="font-sans text-sm font-semibold italic text-accent">
-            DNA AI-first com responsabilidade — credenciais que sustentam resultado e escala.
+            DNA AI-first com responsabilidade: credenciais que sustentam resultado e escala.
           </p>
         </motion.div>
       </motion.div>
@@ -807,7 +807,7 @@ const InstitutionalClose = () => (
     >
       <motion.div variants={fadeUp} transition={{ duration: 0.6 }} className="mx-auto max-w-2xl">
         <p className="font-sans text-lg font-semibold leading-relaxed text-white md:text-xl">
-          Lobo Soluções — a inteligência que entrega resultados e escala.
+          Lobo Soluções. A inteligência que entrega resultados e escala.
           <br />
           <span className="text-accent">
             Agentes, consultoria, engenharia e arquitetura com a governança de quem já percorreu o
@@ -858,7 +858,7 @@ const Metodologia = () => (
           </h2>
           <p className="mx-auto max-w-2xl text-base leading-relaxed text-stone-600 md:text-lg">
             Do discovery ao quality gate: entregáveis, guardrails e o papel dos agentes e da IA em cada
-            etapa do AI‑DLC — o método operacional do DNA AI-first da Lobo Soluções.{" "}
+            etapa do AI‑DLC (método operacional do DNA AI-first da Lobo Soluções).{" "}
             <span className="text-stone-500">Abra cada fase para ver a explicação completa.</span>
           </p>
         </motion.div>

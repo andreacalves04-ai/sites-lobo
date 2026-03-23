@@ -7,7 +7,7 @@ const steps = [
     label: "Intent",
     title: "Objetivos como Input Primário",
     description:
-      "Objetivos de negócio e técnicos alimentam diretamente a decomposição por IA. Sem briefings vagos — cada ciclo parte de uma intenção clara e mensurável.",
+      "Objetivos de negócio e técnicos alimentam diretamente a decomposição por IA. Sem briefings vagos: cada ciclo parte de uma intenção clara e mensurável.",
   },
   {
     icon: Boxes,
@@ -43,7 +43,7 @@ const AIDLCSection = () => {
             </span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Da intenção de negócio à engenharia em escala — agentes e IA aceleram, consultoria e
+            Da intenção de negócio à engenharia em escala: agentes e IA aceleram, consultoria e
             arquitetura definem a trilha; humanos fecham decisões críticas e governança.
           </p>
         </div>
@@ -90,7 +90,7 @@ const AIDLCSection = () => {
               <p className="text-muted-foreground text-sm leading-relaxed">
                 Nada de <em>"coding first"</em>. Exigimos que o design de domínio
                 e o design lógico sejam validados <strong>antes de qualquer linha
-                de código</strong> — prevenindo dívida técnica desde a origem.
+                de código</strong>, prevenindo dívida técnica desde a origem.
               </p>
             </div>
           </div>

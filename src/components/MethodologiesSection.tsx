@@ -24,7 +24,7 @@ const methodologies = [
     step: "03",
     title: "Ciclo de IA & inovação",
     description:
-      "Da viabilidade à arquitetura de agentes e à engenharia em produção — POCs e MVPs com portões de qualidade, para inovar sem perder escala nem governança.",
+      "Da viabilidade à arquitetura de agentes e à engenharia em produção. POCs e MVPs com portões de qualidade, para inovar sem perder escala nem governança.",
   },
 ];
 

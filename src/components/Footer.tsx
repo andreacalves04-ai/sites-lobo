@@ -23,7 +23,7 @@ const Footer = () => {
           </a>
         </p>
         <p className="font-mono text-xs text-stone-500">
-          © {year} — todos os direitos reservados
+          © {year} · todos os direitos reservados
         </p>
       </div>
     </footer>

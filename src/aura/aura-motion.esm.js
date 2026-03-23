@@ -1,5 +1,5 @@
 /**
- * Aura Motion — versão ESM para Vite / React (ex.: projetos Lovable).
+ * Aura Motion: versão ESM para Vite / React (ex.: projetos Lovable).
  * import { initAuraMotion } from './aura-motion.esm.js'
  * useEffect(() => { initAuraMotion(); }, []);
  */

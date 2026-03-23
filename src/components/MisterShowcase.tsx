@@ -93,7 +93,7 @@ const MisterShowcase = () => {
               Aposta do <span className="text-accent">Mister IA</span>
             </h2>
             <p className="mx-auto max-w-3xl text-lg font-light text-stone-600 md:text-xl">
-              Dados geram <span className="font-semibold text-stone-900">confiança</span> — e sustentam{" "}
+              Dados geram <span className="font-semibold text-stone-900">confiança</span> e sustentam{" "}
               <span className="font-semibold text-stone-900">resultados em escala</span> quando agentes,
               consultoria e engenharia conversam na mesma arquitetura.
             </p>
@@ -192,7 +192,7 @@ const MisterShowcase = () => {
                 Agentes especializados por mercado
               </h3>
               <p className="mb-6 leading-relaxed text-stone-600">
-                Cada mercado — Over/Under, Handicap Asiático, Resultado Final — possui agentes dedicados que
+                Cada mercado (Over/Under, Handicap Asiático, Resultado Final) possui agentes dedicados que
                 fazem microanálise de cada detalhe. Outros agentes validam as análises para eliminar
                 alucinações e garantir consistência.
               </p>
@@ -223,7 +223,7 @@ const MisterShowcase = () => {
               </h3>
               <p className="mb-6 leading-relaxed text-stone-600">
                 Utilizamos banco vetorial para pesquisa semântica de informações, permitindo que o sistema
-                cruze dados históricos, notícias e estatísticas de forma inteligente — encontrando padrões
+                cruze dados históricos, notícias e estatísticas de forma inteligente, encontrando padrões
                 invisíveis a olho nu.
               </p>
               <div className="flex flex-wrap gap-2">

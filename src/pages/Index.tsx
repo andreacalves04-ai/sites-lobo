@@ -21,7 +21,7 @@ const Index = () => {
       <LeadershipSection />
 
       <ClientsSection />
-      {/* <CasesSection /> — Resultados comprovados */}
+      {/* <CasesSection />: Resultados comprovados */}
       <MethodologiesSection />
       <ContactSection />
     </>

@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 
 const badges = ["Agentes de IA", "Consultoria", "Engenharia", "Arquitetura"];
 
-/** Coloca o ficheiro em `public/hero-bg.mp4` — URL no browser: `/hero-bg.mp4`. */
+/** Coloca o ficheiro em `public/hero-bg.mp4` (URL no browser: `/hero-bg.mp4`). */
 const HERO_VIDEO_SRC = "/hero-bg.mp4";
 
 const HeroSection = () => {
@@ -70,7 +70,7 @@ const HeroSection = () => {
           </h1>
 
           <p className="mb-10 max-w-xl text-base leading-relaxed text-stone-600 md:mb-12 md:text-lg">
-            Na Lobo, IA não é tendência de slide — é o DNA do jeito de trabalhar. Combinamos agentes,
+            Na Lobo, IA não é tendência de slide: é o DNA do jeito de trabalhar. Combinamos agentes,
             consultoria e engenharia com arquitetura sólida para levar do experimento à operação com
             governança, velocidade e impacto mensurável.
           </p>

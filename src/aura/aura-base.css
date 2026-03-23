@@ -1,4 +1,4 @@
-/* Aura — camada base (reveal, carrossel, marquee, hero, modal, tabelas de spec) */
+/* Aura: camada base (reveal, carrossel, marquee, hero, modal, tabelas de spec) */
 
 body.aura-body {
     font-family: var(--aura-font-sans);
@@ -217,7 +217,7 @@ iconify-icon {
 }
 
 /* ------------------------------------------------------------------ */
-/*  Section rhythm — transições suaves + leitura (home & páginas DS)   */
+/*  Section rhythm: transições suaves + leitura (home & páginas DS)   */
 /* ------------------------------------------------------------------ */
 
 .section-rhythm-canvas {
