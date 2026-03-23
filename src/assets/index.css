@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+@import "../aura/aura-tokens.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 15%;
+
+    --primary: 45 95% 50%;
+    --primary-foreground: 240 10% 10%;
+
+    --secondary: 45 30% 96%;
+    --secondary-foreground: 240 10% 15%;
+
+    --muted: 240 5% 96%;
+    --muted-foreground: 240 5% 45%;
+
+    --accent: 270 60% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 5% 90%;
+    --input: 240 5% 90%;
+    --ring: 45 95% 50%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --gold: 45 95% 50%;
+    --gold-light: 45 95% 60%;
+    --gold-dark: 45 95% 40%;
+    --purple: 270 60% 50%;
+    --purple-light: 270 50% 65%;
+    --purple-dark: 270 65% 35%;
+    --dark: 240 10% 15%;
+    --dark-lighter: 240 5% 96%;
+    --dark-card: 240 5% 98%;
+
+    --gradient-gold: linear-gradient(135deg, hsl(45 95% 50%), hsl(40 95% 40%));
+    --gradient-purple: linear-gradient(135deg, hsl(270 60% 50%), hsl(270 50% 65%));
+    --shadow-gold: 0 4px 30px -5px hsl(45 95% 50% / 0.25);
+    --shadow-card: 0 4px 20px -5px hsl(240 10% 15% / 0.08);
+    --shadow-purple: 0 4px 30px -5px hsl(270 60% 50% / 0.2);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-gold-dark bg-clip-text text-transparent;
+  }
+
+  .gradient-text-purple {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(270 60% 50%), hsl(270 50% 65%));
+  }
+
+  .gradient-border {
+    @apply relative;
+    background: linear-gradient(white, white) padding-box,
+                var(--gradient-gold) border-box;
+    border: 1px solid transparent;
+  }
+
+  .glow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-1;
+    box-shadow: var(--shadow-card);
+  }
+
+  .card-hover:hover {
+    box-shadow: 0 8px 30px -5px hsl(240 10% 15% / 0.12);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

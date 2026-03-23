@@ -1,0 +1,385 @@
+/* Aura — camada base (reveal, carrossel, marquee, hero, modal, tabelas de spec) */
+
+body.aura-body {
+    font-family: var(--aura-font-sans);
+    background-color: var(--aura-surface-canvas);
+    color: var(--aura-ink-default);
+    overflow-x: hidden;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(2rem);
+    transition: all var(--aura-duration-reveal) var(--aura-ease-out);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.text-reveal-wrapper {
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.text-reveal-content {
+    transform: translateY(110%);
+    opacity: 0;
+    transition: transform var(--aura-duration-text-reveal) var(--aura-ease-out), opacity var(--aura-duration-text-reveal) ease;
+    display: block;
+}
+
+.reveal-active .text-reveal-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.delay-100 { transition-delay: 0.1s; }
+.delay-200 { transition-delay: 0.2s; }
+.delay-300 { transition-delay: 0.3s; }
+.delay-500 { transition-delay: 0.5s; }
+.delay-700 { transition-delay: 0.7s; }
+
+.carousel-slide {
+    position: absolute;
+    inset: 0;
+    transition: opacity 1.5s ease-in-out;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+}
+
+.carousel-slide img {
+    transform: scale(1);
+    transition: transform 10s ease-out;
+}
+
+.carousel-slide.active img {
+    transform: scale(1.1);
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 30s linear infinite;
+}
+
+.marquee-container {
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+}
+
+.marquee-content {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-around;
+    min-width: 100%;
+    animation: scroll 40s linear infinite;
+}
+
+@keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+}
+
+.nav-load {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.8s ease-out;
+}
+
+.nav-load.loaded {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+iconify-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.parallax-element {
+    will-change: transform;
+}
+
+@keyframes animationIn {
+    0% { opacity: 0; transform: translateY(30px); filter: blur(10px); }
+    100% { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+
+@keyframes shimmer {
+    from { transform: translateX(-100%) skewX(-15deg); }
+    to { transform: translateX(200%) skewX(-15deg); }
+}
+
+.hero-aurora {
+    position: absolute;
+    inset: -20%;
+    background:
+        radial-gradient(ellipse 80% 50% at 20% 40%, rgba(255, 255, 255, 0.45), transparent 55%),
+        radial-gradient(ellipse 60% 40% at 80% 60%, rgba(214, 211, 209, 0.5), transparent 50%),
+        radial-gradient(circle at 50% 100%, rgba(255, 255, 255, 0.25), transparent 45%);
+    animation: aurora-drift 18s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+
+@keyframes aurora-drift {
+    0% { transform: translate(0, 0) scale(1); opacity: 0.9; }
+    100% { transform: translate(-2%, 1%) scale(1.05); opacity: 1; }
+}
+
+.hero-grid-noise {
+    position: absolute;
+    inset: 0;
+    opacity: 0.06;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    mix-blend-mode: overlay;
+    pointer-events: none;
+}
+
+.hero-glow-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    animation: orb-pulse 6s ease-in-out infinite;
+}
+
+@keyframes orb-pulse {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.15); opacity: 0.85; }
+}
+
+.flashlight-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.flashlight-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        500px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+        var(--aura-flashlight-spot),
+        transparent 40%
+    );
+    opacity: 0;
+    transition: opacity 0.45s ease;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.flashlight-card:hover::before {
+    opacity: 1;
+}
+
+.section-bg-shift {
+    position: relative;
+    overflow: hidden;
+}
+
+.section-bg-shift::before {
+    content: "";
+    position: absolute;
+    inset: -40%;
+    background:
+        linear-gradient(125deg, rgba(255, 255, 255, 0.5) 0%, transparent 40%, rgba(231, 229, 228, 0.6) 70%, transparent 100%);
+    animation: bg-pan 22s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes bg-pan {
+    0% { transform: rotate(0deg) translateX(0); }
+    100% { transform: rotate(360deg) translateX(8%); }
+}
+
+.section-bg-shift > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Section rhythm — transições suaves + leitura (home & páginas DS)   */
+/* ------------------------------------------------------------------ */
+
+.section-rhythm-canvas {
+    position: relative;
+    overflow: hidden;
+    background-color: #e7e6e0;
+    background-image:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.48) 0%, rgba(255, 255, 255, 0) 16%),
+        linear-gradient(165deg, rgb(232 231 225) 0%, rgb(235 235 227) 42%, rgb(228 227 221) 100%);
+}
+
+.section-rhythm-canvas::before {
+    content: "";
+    position: absolute;
+    inset: -32% -22%;
+    background:
+        radial-gradient(ellipse 68% 52% at 18% 18%, rgba(255, 255, 255, 0.28), transparent 58%),
+        radial-gradient(ellipse 55% 48% at 92% 85%, rgba(214, 211, 209, 0.22), transparent 52%);
+    animation: section-rhythm-float 34s ease-in-out infinite alternate;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.section-rhythm-canvas > * {
+    position: relative;
+    z-index: 1;
+}
+
+/** Canvas após faixa escura (hero / digital twin) */
+.section-rhythm-canvas.section-rhythm-canvas-from-dark {
+    background-image:
+        linear-gradient(180deg, rgba(12, 10, 9, 0.14) 0%, rgba(12, 10, 9, 0) 16%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 17%),
+        linear-gradient(165deg, rgb(232 231 225) 0%, rgb(235 235 227) 42%, rgb(228 227 221) 100%);
+}
+
+.section-rhythm-paper {
+    position: relative;
+    overflow: hidden;
+    background-color: #f7f6f3;
+    background-image:
+        linear-gradient(178deg, rgb(252 252 250) 0%, rgb(248 247 244) 38%, rgb(242 241 237) 100%);
+}
+
+.section-rhythm-paper::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(1000px 380px at 50% -5%, rgba(255, 255, 255, 0.82), transparent 62%);
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.95;
+}
+
+.section-rhythm-paper > * {
+    position: relative;
+    z-index: 1;
+}
+
+/** Papel após bloco escuro (ex.: AI‑DLC → produto) */
+.section-rhythm-paper-from-dark {
+    background-image:
+        linear-gradient(180deg, rgba(12, 10, 9, 0.11) 0%, rgba(12, 10, 9, 0) 14%),
+        linear-gradient(178deg, rgb(252 252 250) 0%, rgb(247 246 243) 40%, rgb(241 240 236) 100%);
+}
+
+/** Papel após faixa canvas bege (ex.: clientes após liderança) */
+.section-rhythm-paper-from-canvas {
+    background-image:
+        linear-gradient(180deg, rgba(235, 235, 227, 0.82) 0%, rgba(235, 235, 227, 0) 11%),
+        linear-gradient(178deg, rgb(252 252 250) 0%, rgb(248 247 244) 45%, rgb(243 242 238) 100%);
+}
+
+/** Contato: âncora visual no rodapé da secção */
+.section-rhythm-contact {
+    background-image:
+        linear-gradient(180deg, rgba(235, 235, 227, 0.78) 0%, rgba(235, 235, 227, 0) 10%),
+        linear-gradient(178deg, rgb(252 252 250) 0%, rgb(247 246 243) 50%, rgb(240 239 235) 100%);
+}
+
+.section-rhythm-contact::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: min(55%, 420px);
+    background: linear-gradient(to top, rgba(235, 234, 230, 0.55), transparent);
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes section-rhythm-float {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-1.8%, 1.2%) scale(1.03);
+        opacity: 0.92;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .section-rhythm-canvas::before {
+        animation: none;
+    }
+}
+
+.ds-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background: var(--aura-modal-backdrop);
+    backdrop-filter: blur(var(--aura-modal-blur));
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s var(--aura-ease-out);
+}
+
+.ds-modal-backdrop.is-open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.ds-modal-panel {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    z-index: 101;
+    width: min(92vw, 480px);
+    transform: translate(-50%, -48%) scale(0.96);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.4s var(--aura-ease-out), opacity 0.35s ease;
+}
+
+.ds-modal-panel.is-open {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.spec-table {
+    width: 100%;
+    font-size: 0.7rem;
+    font-family: var(--aura-font-mono);
+    border-collapse: collapse;
+}
+
+.spec-table th,
+.spec-table td {
+    border: 1px solid rgb(214 211 209 / 0.8);
+    padding: 0.5rem 0.6rem;
+    text-align: left;
+    vertical-align: top;
+}
+
+.spec-table th {
+    background: rgb(245 245 244 / 0.9);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: rgb(120 113 108);
+}
