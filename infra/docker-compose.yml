@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  sites-lobo:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "8081:80" # Porta externa 8081 para não conflitar com o outro projeto
+    networks:
+      - agents-net
+
+networks:
+  agents-net:
+    external: true # Assume a rede 'agents-net' já existe ou conecta em uma comum

@@ -1,0 +1,32 @@
+name: Deploy sites-lobo
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy to Server via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.REMOTE_HOST }}
+          username: ${{ secrets.REMOTE_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            # Navega até o diretório do projeto no servidor (que já deve ser um clone do repo)
+            cd ${{ secrets.REMOTE_TARGET }}
+            git pull origin main
+            
+            # Navega até a pasta de infraestrutura e executa o docker-compose
+            cd infra
+            docker compose up --build -d --remove-orphans
+            
+            # Limpa imagens antigas não utilizadas
+            docker image prune -f
+            docker ps
